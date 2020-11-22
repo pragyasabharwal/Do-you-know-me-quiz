@@ -16,44 +16,51 @@ if (response.toUpperCase() === YES) {
 
     score = 0;
 
-    questions =[
+    questions = [{
+            question: "Where do I live? ",
+            answer: "Delhi"
+        },
         {
-            question:"Where do I live? ",
-            answer: "Delhi"},
-            {
-            question:"What is my age? ",
-            answer: "20"},
-            {
-            question:"What is my favorite color? ",
+            question: "What is my age? ",
+            answer: "20"
+        },
+        {
+            question: "What is my favorite color? ",
             answer: "Orange"
-          },{
-            question:"Do I like tea or coffee? ",
+        }, {
+            question: "Do I like tea or coffee? ",
             answer: "Coffee"
-          },{
-            question:"Which city is my college in? ",
-            answer:"Delhi"},
-            {
-            question:"Do I like to read? ",
-            answer:"Yes"
-          },{
-            question:"Movies/Books? ",
-            answer:"Books"},{
-            question:"Which is my birthday month? ",
-            answer:"November"}
+        }, {
+            question: "Which city is my college in? ",
+            answer: "Delhi"
+        },
+        {
+            question: "Do I like to read? ",
+            answer: "Yes"
+        }, {
+            question: "Movies/Books? ",
+            answer: "Books"
+        }, {
+            question: "Which is my birthday month? ",
+            answer: "November"
+        }
     ]
-    function play(question,answer)
+
+    function play(question, answer) {
+        var userAnswer = readlineSync.question(question)
+        if (userAnswer.toUpperCase() === answer.toUpperCase()) {
+            score++
+            log(chalk.green("You know this answer! " + "\n" + "Points: " + score))
+            console.log("--------")
+        } else {
+            score--
+            log(chalk.red("Oops! that is a wrong answer, " + userName + " " + "\n" + "Points: " + score))
+            console.log("--------")
+        }
+    }
+    for(i=0;i<questions.length;i++)
 {
-  var userAnswer = readlineSync.question(question)
-  if(userAnswer.toUpperCase()===answer.toUpperCase()){
-  score++
-    log(chalk.green("You know this answer! " + "\n" + "Points: " + score))
-    console.log("--------")
-  }
-  else
-  { score--
-    log(chalk.red("Oops! that is a wrong answer, " + userName +" " + "\n" + "Points: " + score))
-  console.log("--------")
-  }
-}
+  play(questions[i].question, questions[i].answer)
 }
 
+}
