@@ -58,24 +58,23 @@ if (response.toUpperCase() === YES) {
             console.log("--------")
         }
     }
-    for(i=0;i<questions.length;i++)
-{
-  play(questions[i].question, questions[i].answer)
-}
-log(chalk.bgMagenta("Thanks for playing. Your total score is " + score + "\n"))
+    for (i = 0; i < questions.length; i++) {
+        play(questions[i].question, questions[i].answer)
+    }
+    log(chalk.bgMagenta("Thanks for playing. Your total score is " + score + "\n"))
 
-  log(chalk.yellowBright("\nPrevious Top Scorers:\nAbhishek: 8\nNikita: 6\nKriti: 6\n"))
-
-
-  highScores = [8, 6, 6]
-
-  for(i=0;i<highScores.length;i++)
-  {
-    if(score>=highScores[i])
-    {log(chalk.bold.black.bgGreen("Congrats. You are a top scorer. Please send a screenshot of your score!"))
-    break
-  }
-  }
+    log(chalk.yellowBright("\nPrevious Top Scorers:\nAbhishek: 8\nNikita: 6\nKriti: 6\n"))
 
 
-}
+    highScores = [8, 6, 6]
+
+    for (i = 0; i < highScores.length; i++) {
+        if (score >= highScores[i]) {
+            log(chalk.bold.black.bgGreen("Congrats. You are a top scorer. Please send a screenshot of your score!"))
+            break
+        }
+    }
+
+
+} else
+    console.log("Thanks for coming.. Goodbye!")
