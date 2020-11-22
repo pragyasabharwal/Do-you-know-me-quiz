@@ -41,4 +41,19 @@ if (response.toUpperCase() === YES) {
             question:"Which is my birthday month? ",
             answer:"November"}
     ]
+    function play(question,answer)
+{
+  var userAnswer = readlineSync.question(question)
+  if(userAnswer.toUpperCase()===answer.toUpperCase()){
+  score++
+    log(chalk.green("You know this answer! " + "\n" + "Points: " + score))
+    console.log("--------")
+  }
+  else
+  { score--
+    log(chalk.red("Oops! that is a wrong answer, " + userName +" " + "\n" + "Points: " + score))
+  console.log("--------")
+  }
+}
+}
 
