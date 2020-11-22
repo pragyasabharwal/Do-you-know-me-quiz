@@ -8,7 +8,7 @@ var readlineSync = require("readline-sync")
 var response = readlineSync.question(chalk.bold.white.bgBlue("Are you ready? (Yes/No) "))
 console.log("\n")
 
-if (response.toUpperCase() === YES) {
+if (response.toUpperCase() === "YES") {
     var userName = readlineSync.question(chalk.bgMagenta("What is your name? "))
     console.log("\n")
     log(chalk.bgBlue("Hi " + userName + ". Let the game begin!"))
